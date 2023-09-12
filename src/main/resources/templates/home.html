@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Next Idea</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <header >
+            <div class="p-4 mb-2 bg-body-tertiary rounded-3 ">
+                <div class="container-fluid py-5 ">
+                    <h1 class="display-5 fw-bold ">NextIdea</h1>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand bg-body-tertiary d-flex justify-content-between mb-3 ">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="">Home</a>
+            </div>
+            <a href="/favorito/formulario">
+                <button class="btn btn-outline-secondary me-3">New Favorite</button>
+            </a>
+        </nav>
+
+        <div class="card-header">
+            <h1 class="">Favorites</h1>
+        </div>
+        <div class="card mb-3" th:each="favorito : ${favoritos}">
+            <div class="card-body align-items-center">
+                <div class="row">
+                    <div class="col-12 col-sm-8">
+                        <div class="row">
+                            <div class="col-md-5">Name: <span th:text="${favorito.title}">nome</span></div>
+                            <div class="col-md-7">URL: <span th:text="${favorito.url}">url</span></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 text-end">
+                        <form method="post" th:action="@{|/favorito/delete/${favorito.idFavorite}|}" >
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-outline-secondary" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
