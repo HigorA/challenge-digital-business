@@ -7,6 +7,10 @@
     <li>Nome: Lucas Marques de Souza | RM: 95418</li>
 </ul>
 
+<h2>Video</h2>
+<a href="https://www.youtube.com/watch?v=5OpdFD-qLxc">Video de Digital, clique aqui</a>
+<p>https://www.youtube.com/watch?v=5OpdFD-qLxc</p>
+
 <h2>Objetivo</h2>
 <p>O objetivo da aplicação é utilizar o chatGPT para 
 aprimorar a expêriencia do usuário na busca e descoberta 
