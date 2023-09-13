@@ -20,21 +20,6 @@ public class FavoriteController {
         this.service = service;
     }
 
-    @GetMapping
-    public List<FavoriteResponse> findAll(@RequestParam("userId") Long userId) {
-        return service.getAll(userId);
-    }
-
-    @PostMapping
-    public FavoriteResponse save(@RequestBody FavoriteRequest favoriteRequest) {
-        return service.save(favoriteRequest);
-    }
-
-    @PutMapping
-    public void update(@RequestBody FavoriteRequest request) {
-        service.update(request);
-    }
-
     @PostMapping("/delete/{idFavorite}")
     @Transactional
     public ModelAndView delete(@PathVariable("idFavorite") Long idFavorite) {

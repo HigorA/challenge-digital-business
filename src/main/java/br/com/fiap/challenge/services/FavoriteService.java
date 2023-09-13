@@ -34,13 +34,6 @@ public class FavoriteService {
         return new FavoriteResponse(favorite.getIdFavorite(), favorite.getTitle(), favorite.getUrl());
     }
 
-    public void update(FavoriteRequest request) {
-        Favorite favorite = new Favorite(request.idFavorite(), request.title(), request.url());
-        User user = userRepository.findById(request.idUser()).orElseThrow();
-        favorite.setUser(user);
-        favoriteRepository.save(favorite);
-    }
-
     public void delete(Long favoriteId) {
 
         favoriteRepository.deleteById(favoriteId);
